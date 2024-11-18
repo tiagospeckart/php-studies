@@ -1,18 +1,17 @@
-version: '3.8'
-
 services:
   app:
     build:
       context: ./
       dockerfile: Dockerfile
-    container_name: programwithgio-app
+    container_name: docker.php-app
     restart: always
     working_dir: /var/www/
     volumes:
       - ../src:/var/www
+
   nginx:
     image: nginx:1.19-alpine
-    container_name: programwithgio-nginx
+    container_name: docker.nginx
     restart: always
     ports:
       - 8000:80
